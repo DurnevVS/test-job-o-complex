@@ -1,0 +1,8 @@
+{% for suggestion in suggestions %}
+    <input type="submit"
+           value="{{ suggestion.name }}"
+           hx-post="{% url 'main:index' %}"
+           hx-target="#body"
+           hx-vals='{"city": "{{ suggestion }}"}'
+           class="list-group-item list-group-item-action" />
+{% endfor %}
